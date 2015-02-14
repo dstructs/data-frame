@@ -19,18 +19,18 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var foo = require( 'compute-data-frame' );
+var df = require( 'compute-data-frame' );
 ```
 
-#### foo( arr )
+#### df( arr )
 
-What does this function do?
+
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'compute-data-frame' );
+var df = require( 'compute-data-frame' );
 ```
 
 To run the example code from the top-level application directory,
@@ -68,12 +68,12 @@ $ make view-cov
 ```
 
 
+---
 ## License
 
 [MIT license](http://opensource.org/licenses/MIT). 
 
 
----
 ## Copyright
 
 Copyright &copy; 2015. Athan Reines.

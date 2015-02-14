@@ -25,7 +25,14 @@
   "keywords": [
     "compute.io",
     "compute",
-    "computation"
+    "computation",
+    "data",
+    "frame",
+    "table",
+    "tabular",
+    "data-frame",
+    "format",
+    "array"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/data-frame/issues"
