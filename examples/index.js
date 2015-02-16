@@ -6,4 +6,12 @@ var DataFrame = require( './../lib' ),
 // Create a new data frame:
 var df = new DataFrame( data );
 
-df.head( -18 );
+// Print the first 5 lines:
+df.head( 5 );
+
+// Print the last 3 lines:
+df.tail( 3 );
+
+// Print the data frame as a JSON blob:
+var blob = df.toJSON();
+console.log( JSON.stringify( blob ) );

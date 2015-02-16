@@ -19,7 +19,7 @@ TODO
 		-	if `true`, copy to new DF
 	-	(1) deep copy input `array`; (2) wrap copied `array` in closure; (3) return a data frame which only references the enclosed `array`; (4) force updates via the API.
 6. `toJSON()`
-	- 	JSON blob with `rownames`, `colnames`, and `data` properties
+	- 	deep copy data; mindful of objects. See source.
 7. add/remove row (+rowname)
 	-	if can specify index, then have `insert`; see below
 	-	if no name, then use index
