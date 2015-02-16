@@ -20,8 +20,8 @@ TODO
 	-	(1) deep copy input `array`; (2) wrap copied `array` in closure; (3) return a data frame which only references the enclosed `array`; (4) force updates via the API.
 6. `toJSON()`
 	- 	deep copy data; mindful of objects. See source.
-7. add/remove row (+rowname)
-	-	if can specify index, then have `insert`; see below
+7**. add/remove row (+rowname)
+	-	if can specify index, then have `insert`
 	-	if no name, then use index
 8. add/remove column (+colname)
 	-	if no name, then use index
@@ -29,6 +29,7 @@ TODO
 10. 
 11. a data frame view (akin to go slice)	-	method which returns a new `View` instance
 	-	`new View( [i,j], [i,j] )`
+	-	want it to be referring to same data structure as parent DataFrame
 12. copy (?)
 	-	similar to toString and view, but a full duplication.
 13. transpose
@@ -74,7 +75,7 @@ TODO
 	-	mult rows, mult cols (?)
 39. groupby (?)
 40. hist (?)
-41. insert col/row
+41. 
 42. is{Type} per element
 43. skew
 44. kurt
@@ -91,13 +92,23 @@ TODO
 55. neq
 56. sort
 	- 	via axis
+	-	rows/cols
 57. freq ('axis')
 	-	frequency table
 	-	useful if df contains categorical data
 58. swap rows or cols
 59. toCSV
+	-	should it end with a newline character?
+	-	toCSV as a stream!
 60. toTSV
+	-	should it end with a newline character?
+	-	toTSV as a stream!
 61. round (?)
 62. floor (?)
 63. ceil (?)
-64. 
+64. fromCSV/fromTSV/fromJSON helpers (?)
+	-	would leave these to examples
+	-	in the general case, hard to make these methods exact, as data may stored with data ancillary to data frame data
+65. merge
+	-	from one data frame into another
+66. 

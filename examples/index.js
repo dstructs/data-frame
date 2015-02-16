@@ -15,3 +15,11 @@ df.tail( 3 );
 // Print the data frame as a JSON blob:
 var blob = df.toJSON();
 console.log( JSON.stringify( blob ) );
+
+// Print the data frame as CSV:
+var CSV = df.toCSV();
+console.log( CSV );
+
+// Print the data frame as TSV:
+var TSV = df.toTSV();
+console.log( TSV );
