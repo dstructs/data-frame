@@ -3,7 +3,11 @@ TODO
 
 1. see R/python
 2. enforce type (?)
-	- 	data type; e.g., string, integers, float32, etc
+	- 	data type; e.g., string, integers, float32, etc; see ndarray
+	-	dtype
+		- 	infer
+		- 	assume numeric
+		-	if non-numeric, certain methods should be off-limits; e.g., stats
 3. method should accept `arrays` and other data frames
 4. tests
 5. observers (?)
@@ -14,11 +18,13 @@ TODO
 	-	`copy` as an option
 		-	if `true`, copy to new DF
 	-	(1) deep copy input `array`; (2) wrap copied `array` in closure; (3) return a data frame which only references the enclosed `array`; (4) force updates via the API.
-6. `toString()`
+6. `toJSON()`
 	- 	JSON blob with `rownames`, `colnames`, and `data` properties
 7. add/remove row (+rowname)
 	-	if can specify index, then have `insert`; see below
+	-	if no name, then use index
 8. add/remove column (+colname)
+	-	if no name, then use index
 9. update row/colname
 10. 
 11. a data frame view (akin to go slice)	-	method which returns a new `View` instance
@@ -88,4 +94,7 @@ TODO
 58. swap rows or cols
 59. toCSV
 60. toTSV
-61. 
+61. round (?)
+62. floor (?)
+63. ceil (?)
+64. 

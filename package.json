@@ -37,7 +37,9 @@
   "bugs": {
     "url": "https://github.com/compute-io/data-frame/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ascii-table": "0.0.8"
+  },
   "devDependencies": {
     "chai": "1.x.x",
     "mocha": "1.x.x",
