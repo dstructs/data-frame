@@ -64,7 +64,10 @@ TODO
 33. leq
 34. geq
 35. head
+	-	replace ascii-table
+	- 	see how R does it
 36. tail
+	-	replace ascii-table
 37. get
 	-	mult rows, mult cols
 38. set
