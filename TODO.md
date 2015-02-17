@@ -21,7 +21,7 @@ TODO
 6. `toJSON()`
 	- 	deep copy data; mindful of objects. See source.
 7. summary/describe/stats
-8. 
+8. ToC
 9. update row/colname
 	-	fcn( index | name, newname )
 10. 
