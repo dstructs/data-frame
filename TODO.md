@@ -117,4 +117,7 @@ TODO
 66. fliplr
 67. flipud
 68. qtiles (?)
-69. 
+69. method to return row/col name indices
+	-	{'beep': 5, 'boop': 1,...}
+	-	useful for adding rows and columns, as may not know row/col order
+70. 
