@@ -36,8 +36,8 @@ var df = new DataFrame( data );
 ```
 
 The constructor also accepts the following `options`:
-- 	`rownames`: `array` of row names. If not provided, each row name defaults to the row index.
-- 	`colnames`: `array` of column names. If not provided, each column name defaults to the column index.
+- 	`rownames`: row name `array`. If not provided, each row name defaults to the row index.
+- 	`colnames`: column name `array`. If not provided, each column name defaults to the column index.
 
 To specify `options` at instantiation, provide an options `object`.
 
