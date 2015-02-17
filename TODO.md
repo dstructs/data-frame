@@ -20,9 +20,7 @@ TODO
 	-	(1) deep copy input `array`; (2) wrap copied `array` in closure; (3) return a data frame which only references the enclosed `array`; (4) force updates via the API.
 6. `toJSON()`
 	- 	deep copy data; mindful of objects. See source.
-7. add/remove row (+rowname)
-	-	if can specify index, then have `insert`
-	-	if no name, then use index
+7. 
 8. add/remove column (+colname)
 	-	if no name, then use index
 9. update row/colname
@@ -100,9 +98,11 @@ TODO
 59. toCSV
 	-	should it end with a newline character?
 	-	toCSV as a stream!
+	-	need to acct for objects
 60. toTSV
 	-	should it end with a newline character?
 	-	toTSV as a stream!
+	-	need to acct for objects
 61. round (?)
 62. floor (?)
 63. ceil (?)
