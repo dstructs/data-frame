@@ -20,7 +20,7 @@ TODO
 	-	(1) deep copy input `array`; (2) wrap copied `array` in closure; (3) return a data frame which only references the enclosed `array`; (4) force updates via the API.
 6. `toJSON()`
 	- 	deep copy data; mindful of objects. See source.
-7**. add/remove row (+rowname)
+7. add/remove row (+rowname)
 	-	if can specify index, then have `insert`
 	-	if no name, then use index
 8. add/remove column (+colname)
