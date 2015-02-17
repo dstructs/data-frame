@@ -148,5 +148,5 @@ TODO
 	-	Python: objs w methods
 	- 	adv of R is modularity and only include what you need; e.g., if need to transpose, just use `dftranspose`; no need for other methods bound to the `df`
 	-	adv of Python is well-defined interface
-	-	adv of Python is that, because df is a well-defined entity, can take shortcuts and make assumptions abt data structure when writing algorithms (e.g., no need for always determining df size, as these values are bound to `this` context).
+	-	adv of Python is that, because df is a well-defined entity, can take shortcuts and make assumptions abt data structure when writing algorithms (e.g., no need for always determining df size, as these values are bound to `this` context). No need to follow public API.
 79. 
