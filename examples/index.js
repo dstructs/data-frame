@@ -23,3 +23,23 @@ console.log( CSV );
 // Print the data frame as TSV:
 var TSV = df.toTSV();
 console.log( TSV );
+
+var data1, data2;
+
+data1 = [
+	[1,2,3],
+	[4,5,6]
+];
+
+data2 = [
+	[7,8,9],
+	[10,11,12]
+];
+
+df = new DataFrame( data1 );
+
+df.addRows( data2, {
+	'names': ['foo', 'bar'],
+	'idx': [0,2]
+});
+df.head();

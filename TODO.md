@@ -102,7 +102,7 @@ TODO
 60. toTSV
 	-	should it end with a newline character?
 	-	toTSV as a stream!
-	-	need to acct for objects
+	-	need to acct for objects (toString, valueOf, isoString, stringify)
 61. round (?)
 62. floor (?)
 63. ceil (?)
