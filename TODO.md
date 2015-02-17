@@ -31,6 +31,7 @@ TODO
 12. copy (?)
 	-	similar to toString and view, but a full duplication.
 13. transpose
+	-	algorithm optimization --> currently, allocate new array of arrays.
 14. abs
 15. add
 	-	if df, ensure matching dims
@@ -123,4 +124,8 @@ TODO
 71. reorderRows
 72. reorderCols
 73. in README, note that DF is row-major
-74. 
+74. circshift
+75. issorted
+76. joins (?)
+	- 	see mat table
+77. 
