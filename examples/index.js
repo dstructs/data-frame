@@ -24,22 +24,36 @@ console.log( CSV );
 var TSV = df.toTSV();
 console.log( TSV );
 
-var data1, data2;
+var data1, newRows, newCols;
 
 data1 = [
 	[1,2,3],
 	[4,5,6]
 ];
 
-data2 = [
+newRows = [
 	[7,8,9],
 	[10,11,12]
 ];
 
 df = new DataFrame( data1 );
+df.head();
 
-df.addRows( data2, {
+df.addRows( newRows, {
 	'names': ['foo', 'bar'],
-	'idx': [0,2]
+	'idx': [2,0]
 });
 df.head();
+
+newCols = [
+	[13,14,15,16],
+	[17,18,19,20]
+];
+
+df.addCols( newCols, {
+	'names': ['beep', 'boop'],
+	'idx': [3,1]
+});
+df.head();
+
+
