@@ -21,8 +21,8 @@ TODO
 6. `toJSON()`
 	- 	deep copy data; mindful of objects. See source.
 7. summary
-8. add/remove column (+colname)
-	-	if no name, then use index
+8. remove column
+	- 	fcn( index | name )
 9. update row/colname
 	-	fcn( index | name, newname )
 10. 

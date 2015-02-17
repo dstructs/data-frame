@@ -1,10 +1,21 @@
 'use strict';
 
-var DataFrame = require( './../lib' ),
-	data = require( './data.json' );
+var DataFrame = require( './../lib' );
+
+// Data:
+var data = require( './data.json' );
+
+// Variables:
+var rows,
+	cols,
+	df,
+	blob;
+
+// ------------------------
+// Creating a data frame
 
 // Create a new data frame:
-var df = new DataFrame( data );
+df = new DataFrame( data );
 
 // Print the first 5 lines:
 df.head( 5 );
@@ -12,48 +23,58 @@ df.head( 5 );
 // Print the last 3 lines:
 df.tail( 3 );
 
+
+// ------------------------
+// Printing a data frame
+
 // Print the data frame as a JSON blob:
-var blob = df.toJSON();
+blob = df.toJSON();
 console.log( JSON.stringify( blob ) );
 
 // Print the data frame as CSV:
-var CSV = df.toCSV();
-console.log( CSV );
+blob = df.toCSV();
+console.log( blob );
 
 // Print the data frame as TSV:
-var TSV = df.toTSV();
-console.log( TSV );
+blob = df.toTSV();
+console.log( blob );
 
-var data1, newRows, newCols;
 
-data1 = [
+// ------------------------
+// Updating a data frame
+
+data = [
 	[1,2,3],
 	[4,5,6]
 ];
 
-newRows = [
+df = new DataFrame( data );
+df.head();
+
+// Adding rows:
+rows = [
 	[7,8,9],
 	[10,11,12]
 ];
 
-df = new DataFrame( data1 );
-df.head();
-
-df.addRows( newRows, {
+df.addRows( rows, {
 	'names': ['foo', 'bar'],
 	'idx': [2,0]
 });
 df.head();
 
-newCols = [
+// Adding columns:
+cols = [
 	[13,14,15,16],
 	[17,18,19,20]
 ];
 
-df.addCols( newCols, {
+df.addCols( cols, {
 	'names': ['beep', 'boop'],
 	'idx': [3,1]
 });
 df.head();
 
-
+// Removing rows:
+df.delRows( ['bar',0] );
+df.head();
