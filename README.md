@@ -19,18 +19,48 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var df = require( 'compute-data-frame' );
+var DataFrame = require( 'compute-data-frame' );
 ```
 
-#### df( arr )
+#### DataFrame( arr[, opts] )
 
+Data frame constructor. To create a new `DataFrame`, provide an `array` of `arrays`
 
+``` javascript
+var data = [
+	[1,2,3],
+	[4,5,6]
+];
+
+var df = new DataFrame( data );
+```
+
+The constructor also accepts the following `options`:
+- 	`rownames`: `array` of row names. If not provided, each row name defaults to the row index.
+- 	`colnames`: `array` of column names. If not provided, each column name defaults to the column index.
+
+To specify `options` at instantiation,
+
+``` javascript
+var data = [
+	[1,2,3],
+	[4,5,6]
+];
+
+var rownames = [ 'beep', 'boop' ],
+	colnames = [ 'a', 'b', 'c' ];
+
+var df = new DataFrame( data, {
+	'rownames': rownames,
+	'colnames': colnames	
+});
+```
 
 
 ## Examples
 
 ``` javascript
-var df = require( 'compute-data-frame' );
+var DataFrame = require( 'compute-data-frame' );
 ```
 
 To run the example code from the top-level application directory,
