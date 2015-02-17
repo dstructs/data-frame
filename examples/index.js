@@ -17,6 +17,9 @@ var rows,
 // Create a new data frame:
 df = new DataFrame( data );
 
+// Print the size:
+console.log( df.size() );
+
 // Print the first 5 lines:
 df.head( 5 );
 
@@ -51,6 +54,8 @@ data = [
 df = new DataFrame( data );
 df.head();
 
+console.log( df.size() );
+
 // Adding rows:
 rows = [
 	[7,8,9],
@@ -62,6 +67,7 @@ df.addRows( rows, {
 	'idx': [2,0]
 });
 df.head();
+console.log( df.size() );
 
 // Adding columns:
 cols = [
@@ -74,7 +80,17 @@ df.addCols( cols, {
 	'idx': [3,1]
 });
 df.head();
+console.log( df.size() );
 
 // Removing rows:
 df.delRows( ['bar',0] );
 df.head();
+console.log( df.size() );
+
+// Removing columns:
+df.delCols( ['1','boop'] );
+df.head();
+console.log( df.size() );
+
+console.log( df.rownames() );
+console.log( df.colnames() );

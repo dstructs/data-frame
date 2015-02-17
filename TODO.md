@@ -22,7 +22,6 @@ TODO
 	- 	deep copy data; mindful of objects. See source.
 7. summary
 8. remove column
-	- 	fcn( index | name )
 9. update row/colname
 	-	fcn( index | name, newname )
 10. 
