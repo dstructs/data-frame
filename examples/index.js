@@ -94,3 +94,23 @@ console.log( df.size() );
 
 console.log( df.rownames() );
 console.log( df.colnames() );
+
+
+// ------------------------
+// Tranpose
+
+data = [
+	[1,2,3],
+	[4,5,6],
+	[7,8,9]
+];
+
+df = new DataFrame( data );
+df.head();
+
+console.log( df.size() );
+
+// Take the tranpose:
+df.transpose();
+df.head();
+console.log( df.size() );

@@ -20,7 +20,7 @@ TODO
 	-	(1) deep copy input `array`; (2) wrap copied `array` in closure; (3) return a data frame which only references the enclosed `array`; (4) force updates via the API.
 6. `toJSON()`
 	- 	deep copy data; mindful of objects. See source.
-7. summary
+7. summary/describe/stats
 8. 
 9. update row/colname
 	-	fcn( index | name, newname )
@@ -81,9 +81,9 @@ TODO
 44. kurt
 45. median
 46. mean
-47. sum
-48. min
-49. max
+47. sum/nansum
+48. min/nanmin
+49. max/nanmax
 50. mad
 51. stdev
 52. var
@@ -119,4 +119,8 @@ TODO
 69. method to return row/col name indices
 	-	{'beep': 5, 'boop': 1,...}
 	-	useful for adding rows and columns, as may not know row/col order
-70. 
+70. dot
+71. reorderRows
+72. reorderCols
+73. in README, note that DF is row-major
+74. 
