@@ -72,6 +72,14 @@ TODO
 	-	replace ascii-table
 37. get
 	-	mult rows, mult cols
+	-	range query???
+		-	'[:5]', '[1:6]'
+	-	input types
+		-	single index
+		-	single name
+		-	array of indices
+		-	array of names
+		-	range string
 38. set
 	-	mult rows, mult cols (?)
 39. groupby (?)
@@ -82,6 +90,10 @@ TODO
 44. kurt
 45. median
 46. mean
+	-	direction: columns
+	-	opt for across rows (e.g., for timeseries)
+	-	opt for accessor!
+	-	range! --> see #37
 47. sum/nansum
 48. min/nanmin
 49. max/nanmax
@@ -122,10 +134,13 @@ TODO
 	-	useful for adding rows and columns, as may not know row/col order
 70. dot
 71. reorderRows
+	-	names | indices (either all ints or all strings)
 72. reorderCols
+	-	names | indices
 73. in README, note that DF is row-major
 74. circshift
 75. issorted
 76. joins (?)
 	- 	see mat table
-77. 
+77. dedupe/unique (?)
+78. 
