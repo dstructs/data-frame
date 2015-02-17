@@ -24,7 +24,7 @@ var DataFrame = require( 'compute-data-frame' );
 
 #### DataFrame( arr[, opts] )
 
-Data frame constructor. To create a new `DataFrame`, provide an `array` of `arrays`
+Data frame constructor. To create a new `DataFrame`, provide an `array` of `arrays`.
 
 ``` javascript
 var data = [
@@ -39,7 +39,7 @@ The constructor also accepts the following `options`:
 - 	`rownames`: `array` of row names. If not provided, each row name defaults to the row index.
 - 	`colnames`: `array` of column names. If not provided, each column name defaults to the column index.
 
-To specify `options` at instantiation,
+To specify `options` at instantiation, provide an options `object`.
 
 ``` javascript
 var data = [
