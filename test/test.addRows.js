@@ -233,6 +233,33 @@ describe( 'addRows', function tests() {
 		assert.deepEqual( actual, expected );
 	});
 
+	it( 'should allow duplicated names', function test() {
+		var expected, actual;
+
+		df.addRows( rows, {
+			'names': ['boop', 'boop']
+		});
+
+		expected = [ 0, 1, 'boop', 'boop' ];
+		actual = df.rownames();
+
+		assert.deepEqual( actual, expected );
+	});
+
+	it( 'should allow duplicated names when provided indices', function test() {
+		var expected, actual;
+
+		df.addRows( rows, {
+			'idx': [1,3],
+			'names': ['boop', 'boop']
+		});
+
+		expected = [ 0, 'boop', 1, 'boop' ];
+		actual = df.rownames();
+
+		assert.deepEqual( actual, expected );
+	});
+
 	it( 'should deep copy' );
 
 });

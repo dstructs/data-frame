@@ -162,7 +162,6 @@ TODO
 	-	support for duplicated key names
 	-	currently assume unique keys, as only delete first match
 	-	WARNING: straying into db territory!!!!
-	-	update name hash
 82. 
 
 

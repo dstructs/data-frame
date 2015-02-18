@@ -207,6 +207,26 @@ describe( 'compute-data-frame', function tests() {
 		assert.deepEqual( actual, expected );
 	});
 
+	it( 'should allow duplicate row names', function test() {
+		var df, expected, actual;
+
+		expected = [ 'boop', 'boop' ];
+		df = new DataFrame( data, {'rownames': expected} );
+		actual = df.rownames();
+
+		assert.deepEqual( actual, expected );
+	});
+
+	it( 'should allow duplicate column names', function test() {
+		var df, expected, actual;
+
+		expected = [ 'beep', 'boop', 'beep' ];
+		df = new DataFrame( data, {'colnames': expected} );
+		actual = df.colnames();
+
+		assert.deepEqual( actual, expected );
+	});
+
 	it( 'should deep copy' );
 
 });

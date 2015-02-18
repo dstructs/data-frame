@@ -20,10 +20,10 @@ var expect = chai.expect,
 
 describe( 'delCols', function tests() {
 
-	var df;
+	var df, data;
 
 	beforeEach( function beforeEach() {
-		var data = [
+		data = [
 			[1,2,3],
 			[4,5,6],
 			[7,8,9]
@@ -135,6 +135,21 @@ describe( 'delCols', function tests() {
 		];
 
 		df.delCols( [ 'a', 0, 'a' ] );
+		actual = df.data();
+
+		assert.deepEqual( actual, expected );
+	});
+
+	it( 'should remove all columns with the same name', function test() {
+		var df, expected, actual;
+
+		df = new DataFrame( data, {
+			'colnames': [ 'a', 'a', 'a' ]
+		});
+
+		expected = [[],[],[]];
+
+		df.delCols( [2,'a'] );
 		actual = df.data();
 
 		assert.deepEqual( actual, expected );
