@@ -113,6 +113,7 @@ TODO
 	-	frequency table
 	-	useful if df contains categorical data
 	-	accessor!
+	- 	how to distinguish between 1 and '1'? --> will resolve to same key!
 58. swap rows or cols
 59. toCSV
 	-	should it end with a newline character?

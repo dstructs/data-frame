@@ -76,4 +76,14 @@ describe( 'colnames', function tests() {
 		assert.deepEqual( actual, expected );
 	});
 
+	it( 'should allow duplicate column names', function test() {
+		var expected, actual;
+
+		expected = [ 'beep', 'foo', 'beep' ];
+		df.colnames( expected );
+		actual = df.colnames();
+
+		assert.deepEqual( actual, expected );
+	});
+
 });

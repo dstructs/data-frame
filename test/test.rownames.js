@@ -76,4 +76,14 @@ describe( 'rownames', function tests() {
 		assert.deepEqual( actual, expected );
 	});
 
+	it( 'should allow duplicate row names', function test() {
+		var expected, actual;
+
+		expected = [ 'beep', 'beep' ];
+		df.rownames( expected );
+		actual = df.rownames();
+
+		assert.deepEqual( actual, expected );
+	});
+
 });
