@@ -24,6 +24,7 @@ TODO
 8. ToC
 9. update row/colname
 	-	fcn( index | name, newname )
+	-	update name cache
 10. 
 11. a data frame view (akin to go slice)	-	method which returns a new `View` instance
 	-	`new View( [i,j], [i,j] )`
@@ -81,6 +82,7 @@ TODO
 		-	array of indices
 		-	array of names
 		-	range string
+	- 	NOTE: a name could return multiple rows/cols
 38. set
 	-	mult rows, mult cols (?)
 39. groupby (?)
@@ -137,10 +139,10 @@ TODO
 70. dot
 71. reorderRows
 	-	names | indices (either all ints or all strings)
-	- 	how to deal with duplicate names?
+	- 	update rowname cache
 72. reorderCols
 	-	names | indices
-	-	how to deal with duplicate names?
+	-	update colname cache
 73. in README, note that DF is row-major
 	-	underlying data structure assumes rows are most frequent query
 74. circshift( n[, dim])
@@ -159,7 +161,15 @@ TODO
 	-	prevents having to perform a linear search whenever need to map a name to an index
 	-	would force, however, names to be unique
 		-	see delRows. Already assume this, as only delete the first match.
-81. 
+		-	to address, could store indices in array; e.g., { 'name': [...] }
+	- 	could store both as an array and as a hash
+		-	increased memory, but increased convenience --> Yes.
+81. delete rows/columns
+	-	support for duplicated key names
+	-	currently assume unique keys, as only delete first match
+	-	WARNING: straying into db territory!!!!
+	-	update name cache
+82. 
 
 
 
