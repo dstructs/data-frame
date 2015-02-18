@@ -158,10 +158,7 @@ TODO
 78. df over indexeddb
 79. custom builds
 80. 
-81. delete rows/columns
-	-	support for duplicated key names
-	-	currently assume unique keys, as only delete first match
-	-	WARNING: straying into db territory!!!!
+81. 
 82. 
 
 
