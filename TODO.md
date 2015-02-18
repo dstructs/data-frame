@@ -24,7 +24,7 @@ TODO
 8. ToC
 9. update row/colname
 	-	fcn( index | name, newname )
-	-	update name cache
+	-	update name hash
 10. 
 11. a data frame view (akin to go slice)	-	method which returns a new `View` instance
 	-	`new View( [i,j], [i,j] )`
@@ -136,39 +136,33 @@ TODO
 69. method to return row/col name indices
 	-	{'beep': 5, 'boop': 1,...}
 	-	useful for adding rows and columns, as may not know row/col order
+	-	use hashes
 70. dot
 71. reorderRows
 	-	names | indices (either all ints or all strings)
-	- 	update rowname cache
+	- 	update rowname hash
 72. reorderCols
 	-	names | indices
-	-	update colname cache
+	-	update colname hash
 73. in README, note that DF is row-major
 	-	underlying data structure assumes rows are most frequent query
 74. circshift( n[, dim])
 	-	rows/cols
 	-	dim=1, rows (default)
 	-	dim=2, cols
+	-	update hash
 75. issorted
 76. joins (?)
 	- 	see mat table
 77. dedupe/unique (?)
 78. df over indexeddb
 79. custom builds
-80. row/col names stored as a hash (??)
-	-	rownames() --> build array
-	-	hash: { 'name': index}
-	-	prevents having to perform a linear search whenever need to map a name to an index
-	-	would force, however, names to be unique
-		-	see delRows. Already assume this, as only delete the first match.
-		-	to address, could store indices in array; e.g., { 'name': [...] }
-	- 	could store both as an array and as a hash
-		-	increased memory, but increased convenience --> Yes.
+80. 
 81. delete rows/columns
 	-	support for duplicated key names
 	-	currently assume unique keys, as only delete first match
 	-	WARNING: straying into db territory!!!!
-	-	update name cache
+	-	update name hash
 82. 
 
 
