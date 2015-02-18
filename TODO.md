@@ -30,6 +30,7 @@ TODO
 	-	want it to be referring to same data structure as parent DataFrame
 12. copy (?)
 	-	similar to toString and view, but a full duplication.
+	-	deep!
 13. transpose
 	-	algorithm optimization --> currently, allocate new array of arrays.
 14. abs
@@ -109,6 +110,7 @@ TODO
 57. freq ('axis')
 	-	frequency table
 	-	useful if df contains categorical data
+	-	accessor!
 58. swap rows or cols
 59. toCSV
 	-	should it end with a newline character?
@@ -123,7 +125,7 @@ TODO
 63. ceil (?)
 64. fromCSV/fromTSV/fromJSON helpers (?)
 	-	would leave these to examples
-	-	in the general case, hard to make these methods exact, as data may stored with data ancillary to data frame data
+	-	in the general case, hard to make these methods exact, as data may be stored with data ancillary to data frame data
 65. merge
 	-	from one data frame into another
 66. fliplr
@@ -135,18 +137,26 @@ TODO
 70. dot
 71. reorderRows
 	-	names | indices (either all ints or all strings)
+	- 	how to deal with duplicate names?
 72. reorderCols
 	-	names | indices
+	-	how to deal with duplicate names?
 73. in README, note that DF is row-major
 74. circshift
 75. issorted
 76. joins (?)
 	- 	see mat table
 77. dedupe/unique (?)
-78. 
+78. df over indexeddb
 79. custom builds
 80. 
 
+
+
+## Tests
+
+1. head/tail output
+2. 
 
 
 ## Notes
