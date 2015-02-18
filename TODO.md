@@ -142,14 +142,24 @@ TODO
 	-	names | indices
 	-	how to deal with duplicate names?
 73. in README, note that DF is row-major
-74. circshift
+	-	underlying data structure assumes rows are most frequent query
+74. circshift( n[, dim])
+	-	rows/cols
+	-	dim=1, rows (default)
+	-	dim=2, cols
 75. issorted
 76. joins (?)
 	- 	see mat table
 77. dedupe/unique (?)
 78. df over indexeddb
 79. custom builds
-80. 
+80. row/col names stored as a hash (??)
+	-	rownames() --> build array
+	-	hash: { 'name': index}
+	-	prevents having to perform a linear search whenever need to map a name to an index
+	-	would force, however, names to be unique
+		-	see delRows. Already assume this, as only delete the first match.
+81. 
 
 
 
