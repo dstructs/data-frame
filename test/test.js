@@ -207,4 +207,6 @@ describe( 'compute-data-frame', function tests() {
 		assert.deepEqual( actual, expected );
 	});
 
+	it( 'should deep copy' );
+
 });
