@@ -41,6 +41,7 @@ describe( 'colnames', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -59,6 +60,28 @@ describe( 'colnames', function tests() {
 		expect( badValue ).to.throw( Error );
 		function badValue() {
 			df.colnames( new Array( data[0].length+1 ) );
+		}
+	});
+
+	it( 'should throw an error if not provided an array of strings', function test() {
+		var values = [
+			[],
+			5,
+			null,
+			undefined,
+			NaN,
+			true,
+			function(){},
+			{}
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			expect( badValue( values[i] ) ).to.throw( TypeError );
+		}
+		function badValue( value ) {
+			return function() {
+				df.colnames( ['','',value] );
+			};
 		}
 	});
 

@@ -41,6 +41,7 @@ describe( 'tail', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];

@@ -44,6 +44,7 @@ describe( 'delRows', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -65,6 +66,7 @@ describe( 'delRows', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];

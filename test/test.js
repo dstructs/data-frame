@@ -57,6 +57,7 @@ describe( 'compute-data-frame', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -78,6 +79,7 @@ describe( 'compute-data-frame', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -112,6 +114,7 @@ describe( 'compute-data-frame', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -136,10 +139,32 @@ describe( 'compute-data-frame', function tests() {
 		}
 	});
 
+	it( 'should throw an error if row names are not strings', function test() {
+		var values = [
+			[],
+			5,
+			null,
+			undefined,
+			NaN,
+			true,
+			function(){},
+			{}
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			expect( badValue( values[i] ) ).to.throw( TypeError );
+		}
+		function badValue( value ) {
+			return function() {
+				var df = new DataFrame( data, { 'rownames': ['',value] } );
+			};
+		}
+	});
+
 	it( 'should set the rownames to index values if not provided any row names', function test() {
 		var df, expected, actual;
 
-		expected = [ 0, 1 ];
+		expected = [ '0', '1' ];
 		df = new DataFrame( data );
 		actual = df.rownames();
 
@@ -163,6 +188,7 @@ describe( 'compute-data-frame', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -187,10 +213,32 @@ describe( 'compute-data-frame', function tests() {
 		}
 	});
 
+	it( 'should throw an error if column names are not strings', function test() {
+		var values = [
+			[],
+			5,
+			null,
+			undefined,
+			NaN,
+			true,
+			function(){},
+			{}
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			expect( badValue( values[i] ) ).to.throw( TypeError );
+		}
+		function badValue( value ) {
+			return function() {
+				var df = new DataFrame( data, { 'colnames': ['','',value] } );
+			};
+		}
+	});
+
 	it( 'should set the colnames to index values if not provided any column names', function test() {
 		var df, expected, actual;
 
-		expected = [ 0, 1, 2 ];
+		expected = [ '0', '1', '2' ];
 		df = new DataFrame( data );
 		actual = df.colnames();
 

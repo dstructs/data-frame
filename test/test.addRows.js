@@ -45,6 +45,7 @@ describe( 'addRows', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -66,6 +67,7 @@ describe( 'addRows', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -95,6 +97,7 @@ describe( 'addRows', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -105,6 +108,28 @@ describe( 'addRows', function tests() {
 		function badValue( value ) {
 			return function() {
 				df.addRows( rows, {'names': value} );
+			};
+		}
+	});
+
+	it( 'should throw an error if row names are not strings', function test() {
+		var values = [
+			[],
+			5,
+			null,
+			undefined,
+			NaN,
+			true,
+			function(){},
+			{}
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			expect( badValue( values[i] ) ).to.throw( TypeError );
+		}
+		function badValue( value ) {
+			return function() {
+				df.addRows( rows, {'names': ['',value]} );
 			};
 		}
 	});
@@ -124,6 +149,7 @@ describe( 'addRows', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -154,6 +180,7 @@ describe( 'addRows', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -213,7 +240,7 @@ describe( 'addRows', function tests() {
 	it( 'should generate row names if none are provided', function test() {
 		var expected, actual;
 
-		expected = [ 0, 1, 2, 3 ];
+		expected = [ '0', '1', '2', '3' ];
 		df.addRows( rows );
 		actual = df.rownames();
 
@@ -223,7 +250,7 @@ describe( 'addRows', function tests() {
 	it( 'should correctly insert row names if provided indices', function test() {
 		var expected, actual;
 
-		expected = [ 0, 'boop', 1, 'beep' ];
+		expected = [ '0', 'boop', '1', 'beep' ];
 		df.addRows( rows, {
 			'idx': [3,1],
 			'names': ['beep', 'boop']
@@ -240,7 +267,7 @@ describe( 'addRows', function tests() {
 			'names': ['boop', 'boop']
 		});
 
-		expected = [ 0, 1, 'boop', 'boop' ];
+		expected = [ '0', '1', 'boop', 'boop' ];
 		actual = df.rownames();
 
 		assert.deepEqual( actual, expected );
@@ -254,7 +281,7 @@ describe( 'addRows', function tests() {
 			'names': ['boop', 'boop']
 		});
 
-		expected = [ 0, 'boop', 1, 'boop' ];
+		expected = [ '0', 'boop', '1', 'boop' ];
 		actual = df.rownames();
 
 		assert.deepEqual( actual, expected );

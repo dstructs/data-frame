@@ -45,6 +45,7 @@ describe( 'addCols', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -66,6 +67,7 @@ describe( 'addCols', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -95,6 +97,7 @@ describe( 'addCols', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -105,6 +108,28 @@ describe( 'addCols', function tests() {
 		function badValue( value ) {
 			return function() {
 				df.addCols( cols, {'names': value} );
+			};
+		}
+	});
+
+	it( 'should throw an error if column names are not strings', function test() {
+		var values = [
+			[],
+			5,
+			null,
+			undefined,
+			NaN,
+			true,
+			function(){},
+			{}
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			expect( badValue( values[i] ) ).to.throw( TypeError );
+		}
+		function badValue( value ) {
+			return function() {
+				df.addCols( cols, {'names': ['',value]} );
 			};
 		}
 	});
@@ -124,6 +149,7 @@ describe( 'addCols', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -154,6 +180,7 @@ describe( 'addCols', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];
@@ -225,7 +252,7 @@ describe( 'addCols', function tests() {
 	it( 'should generate column names if none are provided', function test() {
 		var expected, actual;
 
-		expected = [ 0, 1, 2, 3, 4 ];
+		expected = [ '0', '1', '2', '3', '4' ];
 		df.addCols( cols );
 		actual = df.colnames();
 
@@ -235,7 +262,7 @@ describe( 'addCols', function tests() {
 	it( 'should correctly insert column names if provided indices', function test() {
 		var expected, actual;
 
-		expected = [ 0, 'boop', 1, 'beep', 2 ];
+		expected = [ '0', 'boop', '1', 'beep', '2' ];
 		df.addCols( cols, {
 			'idx': [3,1],
 			'names': ['beep', 'boop']
@@ -252,7 +279,7 @@ describe( 'addCols', function tests() {
 			'names': ['boop', 'boop']
 		});
 
-		expected = [ 0, 1, 2, 'boop', 'boop' ];
+		expected = [ '0', '1', '2', 'boop', 'boop' ];
 		actual = df.colnames();
 
 		assert.deepEqual( actual, expected );
@@ -266,7 +293,7 @@ describe( 'addCols', function tests() {
 			'names': ['boop', 'boop']
 		});
 
-		expected = [ 0, 'boop', 1, 'boop', 2 ];
+		expected = [ '0', 'boop', '1', 'boop', '2' ];
 		actual = df.colnames();
 
 		assert.deepEqual( actual, expected );

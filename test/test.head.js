@@ -41,6 +41,7 @@ describe( 'head', function tests() {
 			null,
 			undefined,
 			NaN,
+			true,
 			function(){},
 			{}
 		];

@@ -22,13 +22,19 @@ TODO
 	- 	deep copy data; mindful of objects. See source.
 7. summary/describe/stats
 8. ToC
-9. update row/colname
-	-	fcn( index | name, newname )
-	-	update name hash
+9. update colname
 10. 
 11. a data frame view (akin to go slice)	-	method which returns a new `View` instance
 	-	`new View( [i,j], [i,j] )`
+		-	provide the DF?
+		-	may be good to have that ability as could reuse the view over multiple DFs (just swapping underlying data)
+		-	option to copy???
+			-	this effectively just becomes a new df, not a view!
 	-	want it to be referring to same data structure as parent DataFrame
+	-	see #37
+	-	inherit from DF; modify such that include i,j offsets and limits
+		-	no! methods such as adding and removing rows should be off limits
+	-	may need to be its own module
 12. copy (?)
 	-	similar to toString and view, but a full duplication.
 	-	deep!
@@ -75,19 +81,24 @@ TODO
 37. get
 	-	mult rows, mult cols
 	-	range query???
-		-	'[:5]', '[1:6]'
+		-	'[:5]', '[1:6]', '[4:1:-1]'
+		-	[link](http://pandas.pydata.org/pandas-docs/dev/indexing.html#slicing-ranges)
 	-	input types
 		-	single index
 		-	single name
 		-	array of indices
 		-	array of names
 		-	range string
+		-	boolean string
+			-	how diff than filter?
+			-	could use code generation to avoid fcn calls
 	- 	NOTE: a name could return multiple rows/cols
+	-	need to gracefully handle out of range selections --> empty array?
 38. set
 	-	mult rows, mult cols (?)
 39. groupby (?)
 40. hist (?)
-41. 
+41. rank
 42. is{Type} per element
 43. skew
 44. kurt
@@ -97,6 +108,7 @@ TODO
 	-	opt for across rows (e.g., for timeseries)
 	-	opt for accessor!
 	-	range! --> see #37
+		-	or workflow is to create a view and then compute the mean over that view
 47. sum/nansum
 48. min/nanmin
 49. max/nanmax
