@@ -22,7 +22,7 @@ TODO
 	- 	deep copy data; mindful of objects. See source.
 7. summary/describe/stats
 8. ToC
-9. update colname
+9. 
 10. 
 11. a data frame view (akin to go slice)	-	method which returns a new `View` instance
 	-	`new View( [i,j], [i,j] )`
