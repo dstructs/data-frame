@@ -81,7 +81,7 @@ describe( 'rownames', function tests() {
 	it( 'should throw an error if not number of row names does not equal number of rows', function test() {
 		expect( badValue ).to.throw( Error );
 		function badValue() {
-			df.rownames( new Array( data.length+1 ) );
+			df.rownames( [''] );
 		}
 	});
 

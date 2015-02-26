@@ -130,7 +130,7 @@ describe( 'compute-data-frame', function tests() {
 	});
 
 	it( 'should throw an error if number of row names does not equal number of rows', function test() {
-		var names = new Array( data.length+1 );
+		var names = [''];
 
 		expect( badValue ).to.throw( Error );
 
@@ -204,7 +204,7 @@ describe( 'compute-data-frame', function tests() {
 	});
 
 	it( 'should throw an error if number of column names does not equal number of columns', function test() {
-		var names = new Array( data[0].length+1 );
+		var names = [''];
 
 		expect( badValue ).to.throw( Error );
 

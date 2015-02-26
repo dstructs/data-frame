@@ -8,7 +8,10 @@ TODO
 		- 	infer
 		- 	assume numeric
 		-	if non-numeric, certain methods should be off-limits; e.g., stats
-3. accept `arrays` and other data frames
+3. accept
+	-	`arrays`
+	-	other df
+	-	dicts
 4. tests
 5. observers (?)
 	-	prevent side effects (e.g., col names length no longer corresponding to number of columns, data being externally mutated)
@@ -58,6 +61,7 @@ TODO
 	-	ability to threshold values
 23. filter
 	-	rows/cols matching criteria
+	-	return View
 24. corr
 	-	if arg, another DF (ensure matching dims)
 	-	matrix
@@ -76,8 +80,10 @@ TODO
 35. head
 	-	replace ascii-table
 	- 	see how R does it
+	-	opt for display width (wrapping rows)
 36. tail
 	-	replace ascii-table
+	-	opt for display width (wrapping rows)
 37. get
 	-	mult rows, mult cols
 	-	range query???
@@ -94,6 +100,10 @@ TODO
 			-	could use code generation to avoid fcn calls
 	- 	NOTE: a name could return multiple rows/cols
 	-	need to gracefully handle out of range selections --> empty array?
+	- 	return a View!!!
+		-	with head method, etc. See [link](http://pandas.pydata.org/pandas-docs/dev/comparison_with_sql.html#select)
+	- 	option to return new (df/series)
+	-	
 38. set
 	-	mult rows, mult cols (?)
 39. groupby (?)
@@ -170,9 +180,32 @@ TODO
 77. dedupe/unique (?)
 78. df over indexeddb
 79. custom builds
-80. 
-81. 
-82. 
+80. fillna (?)
+81. reindex (?)
+	-	what is this but addRows()/rownames(names) + reorderRows(order)?
+82. Series
+83. pop( name|index )
+	-	return a series
+84. memory of df
+85. info
+	-	column names
+	-	column data type
+	-	size
+	-	dtypes
+	-	
+86. print
+	-	condensed/truncated form for large dfs [link](http://pandas.pydata.org/pandas-docs/dev/dsintro.html#console-display)
+	-	akin to head and tail
+	-	ability to print selected rows/cols/names
+	-	piggy back on `get`
+87. delrows/delcols
+	-	apply a unique to the `idx` `array` before marking rows/cols for deletion
+	-	will have to set the "needs to be sorted" option
+	-	is it worth the trouble?
+		-	only in the case of many duplications
+	-	see [compute-unique](https://github.com/compute-io/unique)
+88. 
+
 
 
 

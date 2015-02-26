@@ -59,7 +59,7 @@ describe( 'colnames', function tests() {
 	it( 'should throw an error if not number of column names does not equal number of columns', function test() {
 		expect( badValue ).to.throw( Error );
 		function badValue() {
-			df.colnames( new Array( data[0].length+1 ) );
+			df.colnames( ['',''] );
 		}
 	});
 

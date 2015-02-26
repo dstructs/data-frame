@@ -51,7 +51,7 @@ describe( 'addRows', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			expect( badValue( values[i] ) ).to.throw( TypeError );
+			expect( badValue( values[i] ) ).to.throw( Error );
 		}
 		function badValue( value ) {
 			return function() {
@@ -73,7 +73,7 @@ describe( 'addRows', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			expect( badValue( values[i] ) ).to.throw( TypeError );
+			expect( badValue( values[i] ) ).to.throw( Error );
 		}
 		function badValue( value ) {
 			return function() {
@@ -137,7 +137,7 @@ describe( 'addRows', function tests() {
 	it( 'should throw an error if number of row names does not equal the number of rows', function test() {
 		expect( badValue ).to.throw( Error );
 		function badValue() {
-			var names = new Array( rows.length+1 );
+			var names = [''];
 			df.addRows( rows, {'names': names} );
 		}
 	});
@@ -167,8 +167,7 @@ describe( 'addRows', function tests() {
 	it( 'should throw an error if number of indices does not equal the number of rows', function test() {
 		expect( badValue ).to.throw( Error );
 		function badValue() {
-			var idx = new Array( rows.length+1 );
-			df.addRows( rows, {'idx': idx} );
+			df.addRows( rows, {'idx': [0]} );
 		}
 	});
 
