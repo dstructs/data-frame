@@ -39,13 +39,15 @@
   },
   "dependencies": {
     "ascii-table": "0.0.8",
+    "compute-incrspace": "^1.0.0",
     "validate.io-array": "^1.0.3",
     "validate.io-array-array": "^1.0.0",
     "validate.io-array-max": "^1.0.0",
     "validate.io-integer": "^1.0.5",
     "validate.io-nonnegative-integer": "^1.0.0",
     "validate.io-nonnegative-integer-array": "^1.0.1",
-    "validate.io-size": "0.0.0",
+    "validate.io-regexp": "^1.0.2",
+    "validate.io-size": "^1.0.0",
     "validate.io-string": "^1.0.2",
     "validate.io-string-array": "^1.0.0",
     "validate.io-unique": "^1.0.0"

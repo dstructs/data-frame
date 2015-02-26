@@ -86,24 +86,19 @@ TODO
 	-	opt for display width (wrapping rows)
 37. get
 	-	mult rows, mult cols
-	-	range query???
-		-	'[:5]', '[1:6]', '[4:1:-1]'
+	-	range query
 		-	[link](http://pandas.pydata.org/pandas-docs/dev/indexing.html#slicing-ranges)
 	-	input types
-		-	single index
-		-	single name
-		-	array of indices
-		-	array of names
-		-	range string
-		-	boolean string
+		-	boolean indexing (e.g., d<3)
 			-	how diff than filter?
 			-	could use code generation to avoid fcn calls
-	- 	NOTE: a name could return multiple rows/cols
-	-	need to gracefully handle out of range selections --> empty array?
+	-	need to gracefully handle out of range/empty selections --> empty array? null?
+		-	currently, return `null`
 	- 	return a View!!!
 		-	with head method, etc. See [link](http://pandas.pydata.org/pandas-docs/dev/comparison_with_sql.html#select)
 	- 	option to return new (df/series)
-	-	
+	-	compute module --> toInteger( arr[, base] )
+		-	dido for toFloat( arr )
 38. set
 	-	mult rows, mult cols (?)
 39. groupby (?)

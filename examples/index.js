@@ -9,7 +9,9 @@ var data = require( './data.json' );
 var rows,
 	cols,
 	df,
-	blob;
+	blob,
+	rownames,
+	colnames;
 
 // ------------------------
 // Creating a data frame
@@ -114,3 +116,59 @@ console.log( df.size() );
 df.transpose();
 df.head();
 console.log( df.size() );
+
+
+// ------------------------
+// Get
+
+data = [
+	[1,2,3],
+	[4,5,6],
+	[7,8,9],
+	[10,11,12],
+	[13,14,15],
+	[16,17,18],
+	[19,20,21],
+	[22,23,24],
+	[25,26,27],
+	[28,29,30]
+];
+
+rownames = [
+	'beep',
+	'boop',
+	'bap',
+	'baz',
+	'foo',
+	'bar',
+	'beep',
+	'boop',
+	'whoa',
+	'beep'
+];
+
+colnames = [ 'a', 'b', 'c' ];
+
+df = new DataFrame( data, {
+	'rownames': rownames,
+	'colnames': colnames
+});
+
+console.log( df.get( '[::-1]', '[:]' ) );
+
+console.log( df.get( 'beep', ['a','b','c'] ) );
+
+console.log( df.get( 'boop', 'a' ) );
+
+console.log( df.get( 'unknown', 'b' ) );
+
+console.log( df.get( 'boop', /.*/ ) );
+
+console.log( df.get( 'whoa', 'unknown' ) );
+
+console.log( df.get( [ 0, 6, 9 ], [ 2,0,1] ) );
+
+console.log( df.get( [ 'beep', 'boop' ], '[0:2]' ) );
+
+console.log( df.get( /^b.{2}p$/, '[2:0:-1]' ) );
+
