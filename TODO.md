@@ -27,17 +27,15 @@ TODO
 8. ToC
 9. 
 10. 
-11. a data frame view (akin to go slice)	-	method which returns a new `View` instance
+11. a data frame view (akin to go slice)
+	-	method which returns a new `View` instance
 	-	`new View( [i,j], [i,j] )`
-		-	provide the DF?
+		-	provide the DF? e.g., `new View( df, [i,j], [i,j] )`
 		-	may be good to have that ability as could reuse the view over multiple DFs (just swapping underlying data)
 		-	option to copy???
 			-	this effectively just becomes a new df, not a view!
 	-	want it to be referring to same data structure as parent DataFrame
-	-	see #37
-	-	inherit from DF; modify such that include i,j offsets and limits
-		-	no! methods such as adding and removing rows should be off limits
-	-	may need to be its own module
+	-	see #88
 12. copy (?)
 	-	similar to toString and view, but a full duplication.
 	-	deep!
@@ -61,7 +59,7 @@ TODO
 	-	ability to threshold values
 23. filter
 	-	rows/cols matching criteria
-	-	return View
+	-	return View/DF (?)
 24. corr
 	-	if arg, another DF (ensure matching dims)
 	-	matrix
@@ -85,20 +83,20 @@ TODO
 	-	replace ascii-table
 	-	opt for display width (wrapping rows)
 37. get
-	-	mult rows, mult cols
 	-	range query
 		-	[link](http://pandas.pydata.org/pandas-docs/dev/indexing.html#slicing-ranges)
+		-	`end` keyword + arithmetic; e.g., `end/2`, `end-5` (only div and sub)
+			-	is this really needed? User could just use `size()` and do the arithmetic independently
 	-	input types
-		-	boolean indexing (e.g., d<3)
+		- 	boolean/logical array
+		-	boolean filter (e.g., d<3)
 			-	how diff than filter?
 			-	could use code generation to avoid fcn calls
-	-	need to gracefully handle out of range/empty selections --> empty array? null?
-		-	currently, return `null`
-	- 	return a View!!!
-		-	with head method, etc. See [link](http://pandas.pydata.org/pandas-docs/dev/comparison_with_sql.html#select)
-	- 	option to return new (df/series)
-	-	compute module --> toInteger( arr[, base] )
-		-	dido for toFloat( arr )
+	-	specialized getters
+		-	iget
+		-	lget
+		-	bget
+		-	reget
 38. set
 	-	mult rows, mult cols (?)
 39. groupby (?)
@@ -199,7 +197,25 @@ TODO
 	-	is it worth the trouble?
 		-	only in the case of many duplications
 	-	see [compute-unique](https://github.com/compute-io/unique)
-88. 
+88. View
+	-	similar to a go slice, but also rather different, as go slice is simply an adjusted pointer
+	-	same underlying data as DF
+	-	simply a restricted search exposed of that data, which need not be contiguous
+	-	methods
+		-	head
+		-	tail
+		-	size
+		-	toJSON, toCSV, toTSV
+		-	data
+		-	get
+			-	retrieves underlying data
+		-	set
+			-	sets underlying data
+		-	stats; e.g., mean, var, etc
+		-	row/col names
+			-	only getters!!
+	- 	See [link](http://pandas.pydata.org/pandas-docs/dev/comparison_with_sql.html#select)
+89. 
 
 
 

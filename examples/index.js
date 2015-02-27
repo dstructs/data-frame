@@ -9,6 +9,7 @@ var data = require( './data.json' );
 var rows,
 	cols,
 	df,
+	df2,
 	blob,
 	rownames,
 	colnames;
@@ -147,28 +148,45 @@ rownames = [
 	'beep'
 ];
 
-colnames = [ 'a', 'b', 'c' ];
+colnames = ['a','b','c'];
 
 df = new DataFrame( data, {
 	'rownames': rownames,
 	'colnames': colnames
 });
 
-console.log( df.get( '[::-1]', '[:]' ) );
+df2 = df.get( '[::-1]', '[:]' );
+df2.head();
 
-console.log( df.get( 'beep', ['a','b','c'] ) );
+df2 = df.get( 'beep', ['a','b','c'] );
+df2.head();
 
-console.log( df.get( 'boop', 'a' ) );
+df2 = df.get( 'boop', 'a' );
+df2.head();
 
-console.log( df.get( 'unknown', 'b' ) );
+df2 = df.get( 'unknown', 'b' );
+console.log( df2 );
 
-console.log( df.get( 'boop', /.*/ ) );
+df2 = df.get( 'boop', /.*/ );
+df2.head();
 
-console.log( df.get( 'whoa', 'unknown' ) );
+df2 = df.get( 'whoa', 20 );
+console.log( df2 );
 
-console.log( df.get( [ 0, 6, 9 ], [ 2,0,1] ) );
+df2 = df.get( [0,6,9], [2,0,1] );
+df2.head();
 
-console.log( df.get( [ 'beep', 'boop' ], '[0:2]' ) );
+df2 = df.get( [0,6,6,9,9], [2,0,0,1,2,0] );
+df2.head();
 
-console.log( df.get( /^b.{2}p$/, '[2:0:-1]' ) );
+df2 = df.get( [ 'beep', 'boop' ], '[0:2]' );
+df2.head();
 
+df2 = df.get( /^b.{2}p$/, '[2:0:-1]' );
+df2.head();
+
+df2 = df.get( /^b.{2}p$/, [true, false, true] );
+df2.head();
+
+df2 = df.get( /^b.{2}p$/, [0,1,0] );
+df2.head();
