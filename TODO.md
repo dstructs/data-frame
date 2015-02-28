@@ -215,7 +215,16 @@ TODO
 		-	row/col names
 			-	only getters!!
 	- 	See [link](http://pandas.pydata.org/pandas-docs/dev/comparison_with_sql.html#select)
-89. 
+89. instead of `data` --> `toArray`?
+90. allow column-order (order option)
+	-	this has deep implications for the rest of the module, with possible sig increased complexity
+91. deep copy TODOs only applies to generic array values; if known dtype, then deep copy is not necessary
+	-	will probably need to use code generation to accommodate all the various array types
+92. Creating new linear arrays
+	-	may want to create a routine for zero arrays for pre-initialization to avoid creating a sparse array
+		-	use `push`, rather than `new`
+		- 	this routine should replace all `new` instances in the code when creating new strided arrays
+93. 
 
 
 

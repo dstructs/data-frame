@@ -40,6 +40,7 @@
   "dependencies": {
     "ascii-table": "0.0.8",
     "compute-incrspace": "^1.0.0",
+    "compute-unique": "^1.0.0",
     "validate.io-array": "^1.0.3",
     "validate.io-array-array": "^1.0.0",
     "validate.io-array-max": "^1.0.0",
